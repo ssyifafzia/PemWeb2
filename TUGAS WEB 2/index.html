@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Panitia Karang Taruna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(7, 31, 97);
+        }
+
+        .container {
+            text-align: center;
+            width: 500px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: rgb(7, 31, 97);
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 80px;
+        }
+
+        input[type="text"], textarea {
+            width: 300px;
+            padding: 5px;
+            border: 2px solid rgb(7, 31, 97);
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: rgb(7, 31, 97);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: black;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formulir Pendaftaran Panitia Karang Taruna</h1>
+
+        <form id="registrationForm">
+            <label for="nama">Nama :</label>
+            <input type="text" id="nama" name="nama"><br><br>
+
+            <label for="nim">NIM :</label>
+            <input type="text" id="nim" name="nim"><br><br>
+
+            <label for="kelas">Kelas :</label>
+            <input type="text" id="kelas" name="kelas"><br><br>
+
+            <label for="alamat">Alamat :</label>
+            <textarea id="alamat" name="alamat" rows="4"></textarea><br><br>
+
+            <button type="button" id="submitBtn">Kirim</button>
+        </form>
+
+        <h3>Tampilkan datanya di sini.....</h3>
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td id="displayNama"></td>
+            </tr>
+            <tr>
+                <td>NIM</td>
+                <td>:</td>
+                <td id="displayNim"></td>
+            </tr>
+            <tr>
+                <td>Kelas</td>
+                <td>:</td>
+                <td id="displayKelas"></td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td id="displayAlamat"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            // Mengambil data dari input
+            var nama = document.getElementById("nama").value;
+            var nim = document.getElementById("nim").value;
+            var kelas = document.getElementById("kelas").value;
+            var alamat = document.getElementById("alamat").value;
+
+            // Menampilkan data ke tabel
+            document.getElementById("displayNama").innerText = nama;
+            document.getElementById("displayNim").innerText = nim;
+            document.getElementById("displayKelas").innerText = kelas;
+            document.getElementById("displayAlamat").innerText = alamat;
+        });
+    </script>
+
+</body>
+</html>
